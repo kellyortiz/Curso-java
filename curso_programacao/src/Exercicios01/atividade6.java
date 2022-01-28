@@ -29,7 +29,7 @@ public class atividade6 {
 	    System.out.printf("Quadrado: " + "%.3f%n",areaQuadrado);
 	    System.out.printf("Retangulo: " + "%.3f%n",areaRetangulo);
 	    
-
+	    sc.close();
 	}
 
 }
