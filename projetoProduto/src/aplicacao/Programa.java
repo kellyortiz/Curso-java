@@ -11,36 +11,38 @@ public class Programa {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Produtos produto = new Produtos();
 		
 		System.out.println("Insira os dados do produto: ");
 		
 		System.out.print("Nome: ");
-		produto.nome = sc.nextLine();
+		String nome = sc.nextLine();
 		
 		System.out.print("Preço: ");
-		produto.preco = sc.nextDouble();
+		double preco = sc.nextDouble();
 		
 		System.out.print("Quantidade em estoque: ");
-		produto.quantidade = sc.nextInt();
+		int quantidade = sc.nextInt();
+		
+		Produtos produtos = new Produtos(nome, preco, quantidade);
 		
 		System.out.println();
-		System.out.println("Informações do produto: " + produto);
+		System.out.println("Informações do produto: " + produtos);
 		
 		System.out.println();
 		System.out.print("Insira o número de produtos a serem adicionados em estoque: ");
+		quantidade = sc.nextInt();
+		produtos.addProdutos(quantidade);
 		
-		int quantidade = sc.nextInt();
-		produto.addProdutos(quantidade);
 		System.out.println();
-		System.out.println("Dados atualizados: " + produto);
+		System.out.println("Dados atualizados: " + produtos);
 		
 		System.out.println();
 		System.out.print("Insira o número de produtos a serem removidos em estoque: ");
 		quantidade = sc.nextInt();
-		produto.removerProdutos(quantidade);
+		produtos.removerProdutos(quantidade);
+		
 		System.out.println();
-		System.out.println("Dados atualizados: " + produto);
+		System.out.println("Dados atualizados: " + produtos);
 		
 		sc.close();
 	}
